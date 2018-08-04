@@ -2,6 +2,7 @@
 	"name": "heroku_yagear_cbpin",
 	"version": "0.0.1",
 	"dependencies": {
-		"express": "2.3.11"
+		"express": "2.3.11",
+		"request": "2.61.0"
 	}
 }
