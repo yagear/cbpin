@@ -9,7 +9,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 
-app.get('/', function(req, res){
+app.get('/test', function(req, res){
 	res.set('Content-Type', 'text/html');
 	res.send('<html><head></head><body>test</body></html>');
 });
