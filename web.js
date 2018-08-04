@@ -3,7 +3,7 @@ var express = require('express');
 var app = express.createServer();
 
 app.get('/a', function(req, res) {
-	// res.send('a');
+	res.end();
 });
 
 var port = process.env.PORT || 3000;
