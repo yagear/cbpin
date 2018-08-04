@@ -2,8 +2,8 @@ var express = require('express');
 
 var app = express.createServer();
 
-app.get('/', function(req, res) {
-	res.send('Hello World');
+app.get('/a', function(req, res) {
+	res.send('a');
 });
 
 var port = process.env.PORT || 3000;
