@@ -6,9 +6,12 @@ app.get('/', function(req, res){
 	res.set('Content-Type', 'text/html');
 	res.send('<html><head></head><body>test</body></html>');
 });
-app.get('/a', function(req, res) {
-	res.send({ user: 'tobi' });
-	res.send([1,2,3]);
+app.get('/:entity', function(req, res) {
+	res.send('entity:' + req.params.entity);
+});
+app.get('/:entity/:command', function(req, res) {
+	res.send('entity:' + req.params.entity + '<br>');
+	res.send('command:' + req.params.command);
 });
 
 var port = process.env.PORT || 3000;
