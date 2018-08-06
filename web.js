@@ -21,16 +21,21 @@ app.get('/db', function (request, response) {
 	});
 });
 
+/// TEST
 app.get('/test', function(req, res){
 	res.set('Content-Type', 'text/html');
 	res.send('<html><head></head><body>test</body></html>');
 });
-app.get('/:entity', function(req, res) {
-	res.send('entity:' + req.params.entity);
-});
+
+/***
+ REST
+ */
 app.get('/:entity/:command', function(req, res) {
 	res.send('entity:' + req.params.entity + '<br>');
 	res.send('command:' + req.params.command);
+});
+app.get('/:entity', function(req, res) {
+	res.send('entity:' + req.params.entity);
 });
 
 app.listen(app.get('port'), function() {
