@@ -14,11 +14,11 @@ var pageBase = fs.readFileSync(app.get('views') + '/base.ejs', 'utf8');
 
 app.get('/', function(req, res){
 	var html = ejs.render(pageBase, {
-		title:"<!-- title -->ƒ^ƒCƒgƒ‹",
+		title:"<!-- title -->ã‚¿ã‚¤ãƒˆãƒ«",
 		head: "<!-- head -->",
-		header: "<!-- header -->ƒwƒbƒ_",
-		contents:"<!-- contents -->ƒRƒ“ƒeƒ“ƒc",
-		footer: "<!-- footer -->ƒtƒbƒ^",
+		header: "<!-- header -->ãƒ˜ãƒƒãƒ€",
+		contents:"<!-- contents -->ã‚³ãƒ³ãƒ†ãƒ³ãƒ„",
+		footer: "<!-- footer -->ãƒ•ãƒƒã‚¿",
 	});
 	res.set('Content-Type', 'text/html');
 	res.send(html);
