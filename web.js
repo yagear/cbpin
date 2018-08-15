@@ -1,12 +1,31 @@
-var cool = require('cool-ascii-faces');
+var ejs = require('ejs'); 
+var fs = require('fs'); 
 var express = require('express');
 var app = express();
+var url  = require('url');
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+
+var pageBase = fs.readFileSync(app.get('views') + '/base.ejs', 'utf8');
+
+app.get('/', function(req, res){
+	var html = ejs.render(pageBase, {
+		title:"<!-- title -->タイトル",
+		head: "<!-- head -->",
+		header: "<!-- header -->ヘッダ",
+		contents:"<!-- contents -->コンテンツ",
+		footer: "<!-- footer -->フッタ",
+	});
+	res.set('Content-Type', 'text/html');
+	res.send(html);
+	res.end();
+});
+
+
 
 var pg = require('pg');
 app.get('/db', function (request, response) {
