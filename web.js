@@ -50,7 +50,8 @@ app.get('/test', function(req, res){
  REST
  */
 app.get('/:entity/:command', function(req, res) {
-	res.send('entity:' + req.params.entity + '<br>' + 'command:' + req.params.command);
+	res.send('entity:' + req.params.entity
+    + '<br>' + 'command:' + req.params.command);
 });
 app.get('/:entity', function(req, res) {
 	res.send('entity:' + req.params.entity);
